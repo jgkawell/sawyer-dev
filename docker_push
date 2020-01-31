@@ -1,0 +1,7 @@
+#!/bin/bash
+
+docker push jgkawell/sawyer:simple
+docker push jgkawell/sawyer:simple-nvidia
+
+docker push jgkawell/sawyer:custom
+docker push jgkawell/sawyer:custom-nvidia
