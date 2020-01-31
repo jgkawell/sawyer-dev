@@ -8,9 +8,10 @@ services:
   - docker
 
 script:
-  - docker build -f ./docker/Dockerfile --target base -t jgkawell/sawyer:base ./docker
-  - docker build -f ./docker/Dockerfile --target nvidia -t jgkawell/sawyer:base-nvidia ./docker
-
+  - docker build -f ./docker/simple.Dockerfile --target base -t jgkawell/sawyer:simple ./docker
+  - docker build -f ./docker/simple.Dockerfile --target nvidia -t jgkawell/sawyer:simple-nvidia ./docker
+  - docker build -f ./docker/custom.Dockerfile --target base -t jgkawell/sawyer:custom ./docker
+  - docker build -f ./docker/custom.Dockerfile --target nvidia -t jgkawell/sawyer:custom-nvidia ./docker
 before_deploy:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
